@@ -2,39 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d5c35bd-e7a4-45d4-995f-3d99917afa0f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/.idea/libraries/KotlinJavaRuntime.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/out/production/aa/Stopwatch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/out/production/aa/Symbol.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/out/production/aa/main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/out/production/aa/queue$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/out/production/aa/queue$Node.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/out/production/aa/queue.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/out/production/aa/stack$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/out/production/aa/stack$Iter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/out/production/aa/stack$Node.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/out/production/aa/stack.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/out/production/aa/test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/src/Stopwatch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/src/Symbol.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/src/main.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/src/queue.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/src/stack.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Arithmetic/src/test.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Arithmetics/Stopwatch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Arithmetics/Symbol.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Arithmetics/main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Arithmetics/queue$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Arithmetics/queue$Node.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Arithmetics/queue.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Arithmetics/stack$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Arithmetics/stack$Iter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Arithmetics/stack$Node.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Arithmetics/stack.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Arithmetics/test.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +25,8 @@
       <file leaf-file-name="main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            <state relative-caret-position="405">
+              <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -394,7 +363,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2084656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2084656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -437,8 +406,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state relative-caret-position="405">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding />
         </state>
       </provider>
