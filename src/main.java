@@ -12,10 +12,8 @@ public class main {
     public static void  main(String[] args){
         //Symbol symbolInit = new Symbol();
        // Double result = symbolInit.getSymbolOperation("(1+(2*3))");
-        int[] a =  new int[1000000];
         Stopwatch timer = new Stopwatch();
         for(int i = 0 ;i<1000000;i++){
-            
         }
         System.out.println(timer.elapsedTime());
     }
