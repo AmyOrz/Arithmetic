@@ -1,3 +1,5 @@
+import utils.Stopwatch;
+
 public class main {
     public int Recursion(int target){
         if(target == 1)return 1;
@@ -10,7 +12,7 @@ public class main {
         return (target+1)*target/2;
     }
     public static void  main(String[] args){
-        //Symbol symbolInit = new Symbol();
+        //dataStructure.symbol.Symbol symbolInit = new dataStructure.symbol.Symbol();
        // Double result = symbolInit.getSymbolOperation("(1+(2*3))");
         Stopwatch timer = new Stopwatch();
         for(int i = 0 ;i<1000000;i++){

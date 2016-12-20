@@ -1,4 +1,5 @@
-import java.util.LinkedList;
+package dataStructure.symbol;
+
 import java.util.Stack;
 
 public class Symbol {

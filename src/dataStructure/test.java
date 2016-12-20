@@ -1,3 +1,7 @@
+package dataStructure;
+
+import dataStructure.stack.stack;
+
 import java.util.Iterator;
 
 public class test {

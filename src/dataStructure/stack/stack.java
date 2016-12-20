@@ -1,5 +1,6 @@
+package dataStructure.stack;
+
 import java.util.Iterator;
-import java.util.Vector;
 
 public class stack<E> implements Iterable<E>{
     private Node first;
@@ -81,7 +82,7 @@ public class stack<E> implements Iterable<E>{
     }
     public void convert()
     {
-        first = reverse(first);
+        first = _convert(first);
     }
     private Node reverse(Node head){
         if(head == null)return null;
@@ -96,6 +97,21 @@ public class stack<E> implements Iterable<E>{
             first = temp;
         }
         return second;
+    }
+
+    private Node _convert(Node head){
+        if(head == null)return null;
+        if(head.next == null)return head;
+
+        Node first = head;
+        Node result = null;
+        while(first != null){
+            Node second = first.next;
+            first.next = result;
+            result = first;
+            first = second;
+        }
+        return result;
     }
     public Iterator<E> iterator(){
         return new Iter();

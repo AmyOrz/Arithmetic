@@ -1,3 +1,5 @@
+package dataStructure.queue;
+
 public class queue<E>{
     private class Node{
         E value;
