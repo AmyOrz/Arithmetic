@@ -6,7 +6,7 @@ import utils.StdOut;
 public class Test {
     public static void main(String[] args){
         int N = StdIn.readInt();
-        IUnionFind uf = new QuickUnion(N);
+        UnionFind uf = new QuickUnion(N);
         while(!StdIn.isEmpty()){
             int p = StdIn.readInt();
             int q = StdIn.readInt();
@@ -14,6 +14,7 @@ public class Test {
                 continue;
             }
             uf.unionTwoNode(p,q);
+            uf.showDatas();
             StdOut.println(p+":"+q);
         }
         StdOut.println(uf.count()+" component.");

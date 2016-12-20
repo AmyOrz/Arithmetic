@@ -17,7 +17,6 @@ public class QuickFind extends UnionFind{
             if(nodeIds[i] == fId){
                 nodeIds[i] = lId;
             }
-            StdOut.print(nodeIds[i]+",");
         }
         nodeCount--;
     }
