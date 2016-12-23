@@ -12,10 +12,19 @@ public class Test {
         for(int i  = 0;i<N;i++){
             array[i] = StdRandom.uniform(N+10);
         }
+        StdOut.println();
         Stopwatch watch = new Stopwatch();
-        Sort s = new BubblingSort(array);
+        Sort s = new MergeSort(array);
         s.sort();
         StdOut.println(watch.elapsedTime()+" second");
+
         s.show();
+
+        Stopwatch w = new Stopwatch();
+        Sort s2 = new ChoiceSort(array);
+        s2.sort();
+        StdOut.println(w.elapsedTime()+"second");
+        //s.show();
+
     }
 }
