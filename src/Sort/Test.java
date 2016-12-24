@@ -14,17 +14,11 @@ public class Test {
         }
         StdOut.println();
         Stopwatch watch = new Stopwatch();
-        Sort s = new MergeSort(array);
+        Sort s = new QuickSort(array);
         s.sort();
         StdOut.println(watch.elapsedTime()+" second");
 
         s.show();
-
-        Stopwatch w = new Stopwatch();
-        Sort s2 = new ChoiceSort(array);
-        s2.sort();
-        StdOut.println(w.elapsedTime()+"second");
-        //s.show();
 
     }
 }
