@@ -29,6 +29,10 @@ public abstract class Sort {
         }
         return true;
     }
-
+    protected int compareTo(int value,int target){
+        if(value < target)return -1;
+        else if(value == target)return 0;
+        else return 1;
+    }
     abstract void sort();
 }
