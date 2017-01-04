@@ -1,10 +1,6 @@
 package dataStructure;
 
 import dataStructure.queue.MaxPQ;
-import dataStructure.stack.stack;
-import utils.StdOut;
-
-import java.util.Iterator;
 
 public class test {
     public static void main(String[] args) {

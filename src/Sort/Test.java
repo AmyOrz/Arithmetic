@@ -11,15 +11,10 @@ public class Test {
         int[] array = new int[N];
         for(int i  = 0;i<N;i++){
             array[i] = StdRandom.uniform(N+10);
-            StdOut.print(array[i] + " ");
         }
-        StdOut.println();
         Stopwatch watch = new Stopwatch();
-        Sort s = new ThreeWayQuickSort(array);
+        Sort s = new HeapSort(array);
         s.sort();
         StdOut.println(watch.elapsedTime()+" second");
-
-        s.show();
-
     }
 }

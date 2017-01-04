@@ -1,8 +1,8 @@
-package dataStructure.stack;
+package dataStructure.LinkList;
 
 import java.util.Iterator;
 
-public class stack<E> implements Iterable<E>{
+public class Link<E> implements Iterable<E>{
     private Node first;
     private int totalCount;
     private class Node{
