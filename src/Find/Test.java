@@ -3,15 +3,19 @@ package Find;
 import utils.StdIn;
 import utils.StdOut;
 
+import java.util.TreeMap;
+
 public class Test {
     public static void main(String[] args){
-        STInterface<String,Integer> st = new SequentialSearchST<String,Integer>();
-        for(int i = 0;!st.isEmpty();i++){
+        BinarySearchTree<String,Integer> st = new BinarySearchTree<>();
+        for(int i = 0;i<6;i++){
             String key = StdIn.readString();
             st.put(key,i);
         }
-        for(String s :st.keys()){
-            StdOut.println(s+"--"+st.get(s));
-        }
+        StdOut.print(st.get("a"));
+        StdOut.print(st.get("q"));
+        StdOut.print(st.min());
+        StdOut.print(st.max());
+        TreeMap
     }
 }

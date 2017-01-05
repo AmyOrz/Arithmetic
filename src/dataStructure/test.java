@@ -2,6 +2,8 @@ package dataStructure;
 
 import dataStructure.queue.MaxPQ;
 
+import java.util.Stack;
+
 public class test {
     public static void main(String[] args) {
         MaxPQ pq = new MaxPQ(10);

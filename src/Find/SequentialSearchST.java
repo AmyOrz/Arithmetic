@@ -1,6 +1,6 @@
 package Find;
 
-public class SequentialSearchST<Key extends Comparable<Key>,Value> implements STInterface<Key extends Comparable<Key>,Value>{
+class SequentialSearchST<Key extends Comparable<Key>,Value>{
     private Node first;
     private class Node{
         Key key;
@@ -60,5 +60,23 @@ public class SequentialSearchST<Key extends Comparable<Key>,Value> implements ST
             i++;
         }
         return i;
+    }
+    public Key min(){
+        Key temp = first.key;
+        for(Node n = first.next;n != null;n = n.next){
+            if(n.key.compareTo(temp) < 0){
+                temp = n.key;
+            }
+        }
+        return temp;
+    }
+    public Key max(){
+        Key temp = first.key;
+        for(Node n = first.next;n != null;n = n.next){
+            if(n.key.compareTo(temp) > 0){
+                temp = n.key;
+            }
+        }
+        return temp;
     }
 }
