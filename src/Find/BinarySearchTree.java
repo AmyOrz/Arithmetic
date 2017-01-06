@@ -1,4 +1,7 @@
 package Find;
+
+import utils.StdOut;
+
 public class BinarySearchTree<Key extends Comparable<Key>,Value> {
     private Node root;
     private class Node{
@@ -10,6 +13,8 @@ public class BinarySearchTree<Key extends Comparable<Key>,Value> {
             this.key = key;
             this.val = val;
             this.len = N;
+            left = null;
+            right = null;
         }
     }
     public void put(Key key,Value val){
@@ -25,17 +30,14 @@ public class BinarySearchTree<Key extends Comparable<Key>,Value> {
         else
             head.val = val;
         head.len = _size(head.left) + _size(head.right) + 1;
+
         return head;
     }
     public Value get(Key key){
         return _get(root,key);
     }
     public Key min(){
-        Node head = root;
-        while(head.left != null){
-            head = head.left;
-        }
-        return head.key;
+        return _min(root).key;
     }
     public Key max(){
         Node head = root;
@@ -54,8 +56,71 @@ public class BinarySearchTree<Key extends Comparable<Key>,Value> {
         if(x == null)return null;
         return x.key;
     }
+    public Key select(int k){
+        if(k < 0 || k > size())return null;
+        return _select(root,k).key;
+    }
+    public int lowerTarget(Key key){
+        return _rank(root,key);
+    }
+    public void delMin(){
+        root = _delMin(root);
+    }
+    public void delete(Key key){
+        root = _delete(root,key);
+    }
     public int size(){
         return _size(root);
+    }
+    public void preShow(){
+        _preShow(root);
+    }
+    private Node _delete(Node head,Key key){
+        if(head == null)return null;
+        int compareVal = key.compareTo(head.key);
+        if(compareVal > 0)head.right = _delete(head.right,key);
+        else if(compareVal < 0)head.left = _delete(head.left,key);
+        else{
+            if(head.left == null)return head.right;
+            if(head.right == null)return head.left;
+            Node temp = head;
+            head = _min(temp.right);
+            head.right = _delMin(temp.right);
+            head.left = temp.left;
+        }
+        head.len = _size(head.left)+_size(head.right)+1;
+        return head;
+    }
+    private Node _min(Node head){
+        while(head.left != null){
+            head = head.left;
+        }
+        return head;
+    }
+    private Node _delMin(Node head){
+        if(head.left == null)return head.right;
+        head.left = _delMin(head.left);
+        return head;
+    }
+    private int _rank(Node head,Key key){
+        if(head == null)return 0;
+        int compareVal = key.compareTo(head.key);
+        if(compareVal < 0)return _rank(head.left,key);
+        else if(compareVal > 0)return 1+_size(head.left)+_rank(head.right,key);
+        else return _size(head.left);
+    }
+    private void _preShow(Node head){
+        if(head == null)return;
+        _preShow(head.left);
+        StdOut.print(head.key+"--");
+        _preShow(head.right);
+    }
+    private Node _select(Node head,int k){
+        if(head == null)return null;
+        int temp = _size(head.left);
+        if(temp > k)return _select(head.left,k);
+        else if(temp < k)return _select(head.right,k-temp-1);
+        else return head;
     }
     private Node _ceiling(Node head,Key key){
         if(head == null)return null;
