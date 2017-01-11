@@ -22,10 +22,9 @@ public class HeapSort extends Sort{
     }
     void sink(int target,int N){
         if(target<0 || target>=N)return;
-        while(2*target<=N){
+        while((2*target+1)<=N){
             int temp = 2*target;
-            if ((temp+1)<=N)
-                if(lower(array[temp], array[temp + 1])) temp++;
+            if(lower(array[temp], array[temp + 1])) temp++;
             if (lower(array[temp], array[target])) return;
             exchange(target,temp);
             target = temp;

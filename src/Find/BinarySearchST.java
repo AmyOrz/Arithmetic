@@ -2,8 +2,9 @@ package Find;
 
 import utils.StdOut;
 
-import java.util.Queue;
-
+/**
+ * 平衡数组实现字符表，查询效率高，但增删操作需要变动数组，效率低
+ */
 public class BinarySearchST<Key extends Comparable<Key>,Value> {
     private Key[] keys;
     private Value[] values;

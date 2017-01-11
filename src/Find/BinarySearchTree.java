@@ -2,6 +2,9 @@ package Find;
 
 import utils.StdOut;
 
+/**
+ * 二叉查找树实现字符表，效率最坏为O(n)。
+ */
 public class BinarySearchTree<Key extends Comparable<Key>,Value> {
     private Node root;
     private class Node{

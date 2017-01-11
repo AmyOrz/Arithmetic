@@ -44,6 +44,7 @@ public class stack<E> implements Iterable<E>{
             while (currentNode != null) {
                 if (++k == target) {
                     currentNode.next = currentNode.next.next;
+                    return;
                 }
                 currentNode = currentNode.next;
             }
