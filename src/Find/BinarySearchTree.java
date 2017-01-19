@@ -23,19 +23,6 @@ public class BinarySearchTree<Key extends Comparable<Key>,Value> {
     public void put(Key key,Value val){
         root = _put(root,key,val);
     }
-    private Node _put(Node head,Key key,Value val){
-        if(head == null)return new Node(key,val,1);
-        int compareVal = key.compareTo(head.key);
-        if(compareVal < 0)
-            head.left = _put(head.left,key,val);
-        else if(compareVal > 0)
-            head.right = _put(head.right,key,val);
-        else
-            head.val = val;
-        head.len = _size(head.left) + _size(head.right) + 1;
-
-        return head;
-    }
     public Value get(Key key){
         return _get(root,key);
     }
@@ -77,6 +64,19 @@ public class BinarySearchTree<Key extends Comparable<Key>,Value> {
     }
     public void preShow(){
         _preShow(root);
+    }
+     private Node _put(Node head,Key key,Value val){
+        if(head == null)return new Node(key,val,1);
+        int compareVal = key.compareTo(head.key);
+        if(compareVal < 0)
+            head.left = _put(head.left,key,val);
+        else if(compareVal > 0)
+            head.right = _put(head.right,key,val);
+        else
+            head.val = val;
+        head.len = _size(head.left) + _size(head.right) + 1;
+
+        return head;
     }
     private Node _delete(Node head,Key key){
         if(head == null)return null;
@@ -134,8 +134,8 @@ public class BinarySearchTree<Key extends Comparable<Key>,Value> {
         Node temp = _ceiling(head.left,key);
         if(temp != null)return temp;
         else return head;
-
     }
+
     private Node _floor(Node head,Key key){
         if(head == null)return null;
         int compareVal = key.compareTo(head.key);
