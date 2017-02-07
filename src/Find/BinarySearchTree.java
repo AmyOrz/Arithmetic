@@ -4,6 +4,7 @@ import utils.StdOut;
 
 /**
  * 二叉查找树实现字符表，效率最坏为O(n)。
+ * 当我们按顺序输入abcde时，查找效率为O(n)，所以需要引入红黑树
  */
 public class BinarySearchTree<Key extends Comparable<Key>,Value> {
     private Node root;

@@ -13,6 +13,7 @@ public abstract class Sort {
         return i<j;
     }
     protected void exchange(int i,int j){
+        StdOut.print(j+"  ");
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;

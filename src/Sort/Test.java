@@ -6,7 +6,7 @@ import utils.StdRandom;
 import utils.Stopwatch;
 
 public class Test {
-    public static void main(String[] agrs){
+    public static void main(String[] args){
         int N = StdIn.readInt();
         int[] array = new int[N];
         for(int i  = 0;i<N;i++){

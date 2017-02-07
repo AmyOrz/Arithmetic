@@ -1,5 +1,7 @@
 package Sort;
 
+import utils.StdOut;
+
 public class HeapSort extends Sort{
     public HeapSort(int[] arr){
         super(arr);
@@ -20,11 +22,12 @@ public class HeapSort extends Sort{
             sink(1,N);
         }
     }
-    void sink(int target,int N){
-        if(target<0 || target>=N)return;
-        while((2*target+1)<=N){
+    void sink(int target,int max){
+        if(target<0 || target>=max)return;
+        while(2*target <= max){
             int temp = 2*target;
-            if(lower(array[temp], array[temp + 1])) temp++;
+            if(temp+1 <= max)
+                if(lower(array[temp], array[temp + 1])) temp++;
             if (lower(array[temp], array[target])) return;
             exchange(target,temp);
             target = temp;

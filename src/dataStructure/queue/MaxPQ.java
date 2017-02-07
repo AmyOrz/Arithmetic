@@ -55,7 +55,9 @@ public class MaxPQ {
     private void sink(int k){
         while (2*k <= len){
             int temp = 2*k;
-            if(_lessThan(temp,temp+1))temp++;
+            if(temp <= len)
+                if(_lessThan(temp,temp+1))temp++;
+
             if(_lessThan(temp,k))break;
             _exchange(k,temp);
             k = temp;
