@@ -1,4 +1,7 @@
 package Find;
+
+import com.sun.org.apache.regexp.internal.RE;
+
 public class RedBlackBST<Key extends Comparable<Key>,Val>{
    private static final boolean Red = true;
    private static final boolean Black = true;
@@ -64,11 +67,134 @@ public class RedBlackBST<Key extends Comparable<Key>,Val>{
       root.color = Black;
    }
 
+   /**
+    * remove the specified key and its associated value from this symbol table
+    */
+   public void delete(Key key){
+      if(key == null)
+         throw new NullPointerException("argument to delete is null");
+
+      if(!contains(key))
+         return;
+
+      if(!isRed(root.left) && !isRed(root.right))
+         root.color = Red;
+
+      root = delete(root,key);
+      if(isEmpty()){
+         root.color = Black;
+      }
+   }
+   private Node delete(Node head,Key key){
+      int compareVal = key.compareTo(head.key);
+      if(compareVal < 0){
+         if(!isRed(head.left) && !isRed(head.left.left)){
+            head = moveRedLeft(head);
+         }
+         head.left = delete(head.left,key);
+      }else{
+         if(isRed(head.left)){
+            head = rotateRight(head);
+         }
+         if(compareVal == 0 && (head.right == null)){
+            return null;
+         }
+         if(!isRed(head.right) && !isRed(head.right.left)){
+            head = moveRedRight(head);
+         }
+         if(compareVal == 0){
+            Node x = min(head.right);
+            head.key = x.key;
+            head.val = x.val;
+            head.right = deleteMin(head.right);
+         }else {
+            head.right = delete(head.right,key);
+         }
+      }
+      return balance(head);
+   }
+   private Node min(Node head){
+      if(head.left == null){
+         return head;
+      }else{
+          return min(head.left);
+      }
+   }
+   private Node deleteMin(Node head){
+      if(head.left == null){
+         return null;
+      }
+      if(!isRed(head.left) && !isRed(head.left.left)){
+         head = moveRedRight(head);
+      }
+      head.left = deleteMin(head.left);
+      return balance(head);
+   }
+   private Node moveRedLeft(Node head){
+      flipColor(head);
+      if(isRed(head.right.left)){
+         head.right = rotateRight(head.right);
+         head = rotateLeft(head);
+         flipColor(head);
+      }
+      return head;
+   }
+   private Node moveRedRight(Node head){
+      flipColor(head);
+      if(isRed(head.left.left)){
+         head = rotateRight(head);
+         flipColor(head);
+      }
+      return head;
+   }
+   private Node balance(Node head){
+      if(isRed(head.right)){
+         head = rotateLeft(head);
+      }
+      if(isRed(head.left) && isRed(head.left.left)){
+         head = rotateRight(head);
+      }
+      if(isRed(head.left) && isRed(head.right)){
+         flipColor(head);
+      }
+      head.size = size(head.left) + size(head.right) + 1;
+      return head;
+   }
    private Node put(Node head,Key key,Val val){
       if(head == null){
          return new Node(key,val,Red,1);
       }
-      
+      int compareVal = key.compareTo(head.key);
+      if(compareVal < 0)head.left = put(head.left,key,val);
+      else if(compareVal > 0)head.right = put(head.right,key,val);
+      else head.val = val;
+
+      return balance(head);
+   }
+   private Node rotateLeft(Node head){
+      Node x = head.right;
+      head.right = x.left;
+      x.left = head;
+      x.color = head.color;
+      head.color = Red;
+      x.size = head.size;
+      head.size = size(head.left) + size(head.right) + 1;
+      return x;
+   }
+   private Node rotateRight(Node head){
+      Node x = head.left;
+      head.left = x.right;
+      x.right = head;
+      x.color = head.color;
+      head.color = Red;
+      x.size = head.size;
+      head.size = size(head.left) + size(head.right) + 1;
+      return x;
+   }
+   private void flipColor(Node head){
+      head.color = !head.color;
+      head.left.color = !head.left.color;
+      head.right.color = !head.right.color;
    }
    private Val get(Node head,Key key){
       while(head != null){
